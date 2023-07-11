@@ -1,6 +1,6 @@
 import Form from '../../components/Form';
 
-import styles from './MainPage.module.scss';
+import styles from './CreateTransactionPage.module.scss';
 
 function FirstPage(props) {
   return (

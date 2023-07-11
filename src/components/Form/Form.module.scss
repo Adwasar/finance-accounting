@@ -36,17 +36,25 @@
     align-items: start;
     margin: 0 auto 40px;
 
-    .radio-btn {
+    .radio-btns {
+      margin-top: 8px;
+      width: 100%;
       display: flex;
-      align-items: center;
       justify-content: space-between;
 
-      .transaction-type {
-        width: 30px;
-      }
+      .radio-btn {
+        display: flex;
+        align-items: center;
+        height: 30px;
 
-      span {
-        margin-left: 15px;
+        .transaction-type {
+          margin-top: 0px;
+          width: 30px;
+        }
+
+        span {
+          margin-left: 15px;
+        }
       }
     }
   }

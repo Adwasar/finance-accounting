@@ -11,7 +11,7 @@ function Header(props) {
         <nav className={styles.navigation}>
           <ul className={styles['navigation-list']}>
             <li className={styles['list-item']}>
-              <Link>Main page</Link>
+              <Link>Create transaction</Link>
             </li>
             <li>
               <Link to="/second-page">Second page</Link>
