@@ -14,10 +14,11 @@ function Header(props) {
               <Link>Create transaction</Link>
             </li>
             <li>
-              <Link to="/second-page">Second page</Link>
+              <Link to="/second-page">History</Link>
             </li>
           </ul>
         </nav>
+        <span>balance: 23400</span>
       </div>
     </header>
   );

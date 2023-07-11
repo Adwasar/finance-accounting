@@ -3,7 +3,7 @@ import { createBrowserRouter } from 'react-router-dom';
 import Layout from './components/Layout';
 import NotFoundPage from './pages/NotFoundPage';
 import CreateTransactionPage from './pages/CreateTransactionPage';
-import SecondPage from './pages/SecondPage';
+import HistoryPage from './pages/HistoryPage';
 
 const router = createBrowserRouter([
   {
@@ -17,7 +17,7 @@ const router = createBrowserRouter([
       },
       {
         path: '/second-page',
-        element: <SecondPage />,
+        element: <HistoryPage />,
       },
     ],
   },
