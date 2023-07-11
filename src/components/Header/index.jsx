@@ -1,5 +1,5 @@
 import styles from './Header.module.scss';
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 
 function Header(props) {
   return (
@@ -11,14 +11,14 @@ function Header(props) {
         <nav className={styles.navigation}>
           <ul className={styles['navigation-list']}>
             <li className={styles['list-item']}>
-              <Link>Create transaction</Link>
+              <NavLink to="/">Create transaction</NavLink>
             </li>
             <li>
-              <Link to="/second-page">History</Link>
+              <NavLink to="/history">History</NavLink>
             </li>
           </ul>
         </nav>
-        <span>balance: 23400</span>
+        <span>balance: 23400 ₴</span>
       </div>
     </header>
   );

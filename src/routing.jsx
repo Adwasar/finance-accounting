@@ -16,7 +16,7 @@ const router = createBrowserRouter([
         element: <CreateTransactionPage />,
       },
       {
-        path: '/second-page',
+        path: '/history',
         element: <HistoryPage />,
       },
     ],
