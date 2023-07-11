@@ -1,5 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700;900&family=Roboto:wght@300;400;700&display=swap');
+
 * {
   margin: 0;
+  font-family: 'Montserrat', sans-serif;
+  font-family: 'Roboto', sans-serif;
 }
 
 a {
@@ -21,12 +25,14 @@ ul {
 
 .wrapper {
   width: 100%;
+  min-height: 100vh;
   overflow: hidden;
+  background-color: rgb(223, 249, 255);
 }
 
 .container {
+  position: relative;
   margin: 0 auto;
-  max-width: 1224px;
-  width: 100%;
+  width: 1224px;
   box-sizing: border-box;
 }

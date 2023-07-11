@@ -1,8 +1,12 @@
 .header {
-  height: 100px;
-  background-color: rgb(103, 165, 219);
+  height: 80px;
+  background-color: rgb(22, 34, 44);
   display: flex;
   align-items: center;
+
+  a {
+    color: #fff;
+  }
 }
 
 .header-container {
@@ -15,5 +19,5 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  width: 180px;
+  width: 220px;
 }

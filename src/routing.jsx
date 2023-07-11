@@ -2,7 +2,7 @@ import { createBrowserRouter } from 'react-router-dom';
 
 import Layout from './components/Layout';
 import NotFoundPage from './pages/NotFoundPage';
-import FirstPage from './pages/FirstPage';
+import MainPage from './pages/MainPage';
 import SecondPage from './pages/SecondPage';
 
 const router = createBrowserRouter([
@@ -13,7 +13,7 @@ const router = createBrowserRouter([
     children: [
       {
         index: true,
-        element: <FirstPage />,
+        element: <MainPage />,
       },
       {
         path: '/second-page',
