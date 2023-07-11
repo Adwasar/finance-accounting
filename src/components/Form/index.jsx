@@ -1,18 +1,27 @@
+import { useContext } from 'react';
 import { useForm } from 'react-hook-form';
 
 import styles from './Form.module.scss';
+import Context from '../../context';
 
 function Form(props) {
+  const { transactions, setTransactions } = useContext(Context);
+
   const {
     register,
     handleSubmit,
     formState: { errors },
   } = useForm();
 
-  const onSubmit = (data) =>
-    alert(
-      `name: ${data.name}, amount: ${data.amount}, transactionType: ${data.transactionType} date: ${data.date}`,
-    );
+  const onSubmit = (data) => {
+    const transaction = {
+      name: data.name,
+      amount: data.amount,
+      type: data.type,
+      date: data.date,
+    };
+    setTransactions([...transactions, transaction]);
+  };
 
   return (
     <>
@@ -48,26 +57,26 @@ function Form(props) {
           <div className={styles['radio-btns']}>
             <div className={styles['radio-btn']}>
               <input
-                {...register('transactionType', { required: 'please select a transaction type!' })}
+                {...register('type', { required: 'please select a transaction type!' })}
                 id="income"
                 className={styles['transaction-type']}
-                name="transactionType"
+                name="type"
                 value="income"
                 type="radio"
               />
               <label htmlFor="income">income</label>
-              {errors?.transactionType && (
+              {errors?.type && (
                 <div className={styles.error} style={{ color: 'red' }}>
-                  {errors.transactionType.message}
+                  {errors.type.message}
                 </div>
               )}
             </div>
             <div className={styles['radio-btn']}>
               <input
-                {...register('transactionType', { required: 'please select a transaction type!' })}
+                {...register('type', { required: 'please select a transaction type!' })}
                 id="expense"
                 className={styles['transaction-type']}
-                name="transactionType"
+                name="type"
                 value="expense"
                 type="radio"
               />
