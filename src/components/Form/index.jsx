@@ -19,7 +19,7 @@ function Form(props) {
   const onSubmit = (data) => {
     const transaction = {
       name: data.name,
-      amount: data.type === 'income' ? data.amount : -data.amount,
+      amount: data.type === 'income' ? Math.abs(data.amount) : -Math.abs(data.amount),
       type: data.type,
       date: data.date,
     };

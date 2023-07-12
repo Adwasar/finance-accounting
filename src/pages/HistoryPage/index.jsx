@@ -41,7 +41,7 @@ function SecondPage(props) {
                   .map((el, i) => {
                     return (
                       <tr key={i}>
-                        <td style={el.type === 'income' ? { color: 'green' } : { color: 'red' }}>
+                        <td style={+el.amount > 0 ? { color: 'green' } : { color: 'red' }}>
                           {el.amount} ₴
                         </td>
                         <td>{el.name}</td>
@@ -61,6 +61,26 @@ function SecondPage(props) {
                   })}
               </tbody>
             </table>
+            <div className={styles.total}>
+              <p>
+                Total income:
+                <span style={{ color: 'green' }}>
+                  {transactions
+                    .filter((el) => el.amount >= 0)
+                    .reduce((acc, el) => acc + el.amount, 0)}
+                  ₴
+                </span>
+              </p>
+              <p>
+                Total expenses:
+                <span style={{ color: 'red' }}>
+                  {transactions
+                    .filter((el) => el.amount < 0)
+                    .reduce((acc, el) => acc + el.amount, 0)}
+                  ₴
+                </span>
+              </p>
+            </div>
           </div>
           {editFormActive ? (
             <EditFrom

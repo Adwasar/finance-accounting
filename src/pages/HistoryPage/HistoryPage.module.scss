@@ -41,4 +41,15 @@
     right: 400px;
     top: 160px;
   }
+
+  .total {
+    margin-top: 40px;
+    display: flex;
+    justify-content: space-between;
+    min-width: 400px;
+
+    span {
+      margin-left: 8px;
+    }
+  }
 }
