@@ -1,4 +1,9 @@
+.wrapper {
+  display: flex;
+}
+
 .history-title {
+  position: relative;
   margin: 40px;
   text-align: center;
 }
