@@ -19,7 +19,9 @@ function App() {
 
   useEffect(() => {
     const storedTransactions = localStorage.getItem('transactions');
-    setTransactions(JSON.parse(storedTransactions));
+    if (storedTransactions) {
+      setTransactions(JSON.parse(storedTransactions));
+    }
   }, []);
 
   useEffect(() => {
