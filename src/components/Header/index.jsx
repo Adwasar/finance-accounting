@@ -1,7 +1,12 @@
-import styles from './Header.module.scss';
 import { Link, NavLink } from 'react-router-dom';
+import { useContext } from 'react';
+
+import styles from './Header.module.scss';
+import Context from '../../context';
 
 function Header(props) {
+  const { balance } = useContext(Context);
+
   return (
     <header className={styles.header}>
       <div className={`${styles['header-container']} container`}>
@@ -18,7 +23,9 @@ function Header(props) {
             </li>
           </ul>
         </nav>
-        <span>balance: 23400 ₴</span>
+        <span style={balance > 0 ? { color: 'green' } : { color: 'red' }}>
+          balance: {balance} ₴
+        </span>
       </div>
     </header>
   );

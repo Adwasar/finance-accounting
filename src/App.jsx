@@ -7,13 +7,14 @@ import './index.scss';
 
 function App() {
   const [transactions, setTransactions] = useState([]);
+  const [balance, setBalance] = useState(0);
 
   useEffect(() => {
-    console.log(transactions);
-  }, [transactions, setTransactions]);
+    setBalance(transactions.reduce((acc, el) => acc + +el.amount, 0));
+  }, [transactions, setTransactions, balance]);
 
   return (
-    <Context.Provider value={{ transactions, setTransactions }}>
+    <Context.Provider value={{ transactions, setTransactions, balance }}>
       <RouterProvider router={router} />
     </Context.Provider>
   );

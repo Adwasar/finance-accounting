@@ -23,7 +23,7 @@ function SecondPage(props) {
               return (
                 <tr key={i}>
                   <td style={el.type === 'income' ? { color: 'green' } : { color: 'red' }}>
-                    {el.type === 'income' ? el.amount : -el.amount} ₴
+                    {el.amount} ₴
                   </td>
                   <td>{el.name}</td>
                   <td>{el.date}</td>
