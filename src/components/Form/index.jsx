@@ -1,4 +1,4 @@
-import { useContext } from 'react';
+import React, { useContext } from 'react';
 import { useForm } from 'react-hook-form';
 
 import styles from './Form.module.scss';
@@ -6,6 +6,8 @@ import Context from '../../context';
 
 function Form(props) {
   const { transactions, setTransactions } = useContext(Context);
+
+  const currentDate = new Date().toISOString().split('T')[0];
 
   const {
     register,
@@ -40,7 +42,7 @@ function Form(props) {
           )}
         </div>
         <div className={styles['input-block']}>
-          <label htmlFor="transaction-amount">Amount:</label>
+          <label htmlFor="transaction-amount">Amount ₴:</label>
           <input
             {...register('amount', { required: 'amount is required field!' })}
             id="transaction-amount"
@@ -64,7 +66,9 @@ function Form(props) {
                 value="income"
                 type="radio"
               />
-              <label htmlFor="income">income</label>
+              <label style={{ color: 'green' }} htmlFor="income">
+                income
+              </label>
               {errors?.type && (
                 <div className={styles.error} style={{ color: 'red' }}>
                   {errors.type.message}
@@ -80,7 +84,9 @@ function Form(props) {
                 value="expense"
                 type="radio"
               />
-              <label htmlFor="expense">expense</label>
+              <label style={{ color: 'red' }} htmlFor="expense">
+                expense
+              </label>
             </div>
           </div>
         </div>
@@ -90,6 +96,7 @@ function Form(props) {
             {...register('date', { required: 'date is required field!' })}
             id="transaction-date"
             type="date"
+            defaultValue={currentDate}
           />
           {errors?.date && (
             <div className={styles.error} style={{ color: 'red' }}>
