@@ -4,7 +4,12 @@ import styles from './HistoryPage.module.scss';
 import Context from '../../context';
 
 function SecondPage(props) {
-  const { transactions } = useContext(Context);
+  const { transactions, setTransactions } = useContext(Context);
+
+  const deleteTransaction = (el) => {
+    setTransactions(transactions.filter((transaction) => el !== transaction));
+    console.log(el);
+  };
 
   return (
     <div className="container">
@@ -31,7 +36,7 @@ function SecondPage(props) {
                     <img src="/icons/edit.svg" alt="#" />
                   </td>
                   <td>
-                    <img src="/icons/delete.svg" alt="#" />
+                    <img onClick={() => deleteTransaction(el)} src="/icons/delete.svg" alt="#" />
                   </td>
                 </tr>
               );

@@ -19,6 +19,10 @@
   td,
   th {
     padding: 10px 15px;
+
+    img {
+      cursor: pointer;
+    }
   }
 
   th:nth-child(4) {
