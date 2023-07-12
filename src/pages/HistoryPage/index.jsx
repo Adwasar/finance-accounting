@@ -91,8 +91,6 @@ function SecondPage(props) {
               amount={selectedElement.amount}
               type={selectedElement.type}
               date={selectedElement.date}
-              setTransactions={setTransactions}
-              transactions={transactions}
             />
           ) : null}
         </div>
