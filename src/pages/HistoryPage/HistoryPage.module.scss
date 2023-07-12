@@ -8,9 +8,13 @@
   margin: 40px auto;
   padding: 40px;
   border-radius: 40px;
-  width: 600px;
+  width: max-content;
   background-color: #fff;
   min-height: 300px;
+
+  table {
+    margin: 0 auto;
+  }
 
   td,
   th {

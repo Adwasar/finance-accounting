@@ -13,9 +13,8 @@ function SecondPage(props) {
         <table className={styles.table}>
           <thead>
             <tr>
-              <th>Name</th>
               <th>Amount</th>
-              <th>Type</th>
+              <th>Name</th>
               <th>Date</th>
             </tr>
           </thead>
@@ -23,9 +22,10 @@ function SecondPage(props) {
             {transactions.map((el, i) => {
               return (
                 <tr key={i}>
+                  <td style={el.type === 'income' ? { color: 'green' } : { color: 'red' }}>
+                    {el.type === 'income' ? el.amount : -el.amount} ₴
+                  </td>
                   <td>{el.name}</td>
-                  <td>{el.amount}</td>
-                  <td>{el.type}</td>
                   <td>{el.date}</td>
                   <td>
                     <img src="/icons/edit.svg" alt="#" />
