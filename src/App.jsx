@@ -13,6 +13,15 @@ function App() {
     setBalance(transactions.reduce((acc, el) => acc + +el.amount, 0));
   }, [transactions, setTransactions, balance]);
 
+  useEffect(() => {
+    const storedTransactions = localStorage.getItem('transactions');
+    setTransactions(JSON.parse(storedTransactions));
+  }, []);
+
+  useEffect(() => {
+    localStorage.setItem('transactions', JSON.stringify(transactions));
+  }, [transactions]);
+
   return (
     <Context.Provider value={{ transactions, setTransactions, balance }}>
       <RouterProvider router={router} />
