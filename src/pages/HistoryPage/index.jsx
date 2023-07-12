@@ -36,27 +36,29 @@ function SecondPage(props) {
                 </tr>
               </thead>
               <tbody>
-                {transactions.map((el, i) => {
-                  return (
-                    <tr key={i}>
-                      <td style={el.type === 'income' ? { color: 'green' } : { color: 'red' }}>
-                        {el.amount} ₴
-                      </td>
-                      <td>{el.name}</td>
-                      <td>{el.date}</td>
-                      <td>
-                        <img onClick={() => editRow(el)} src="/icons/edit.svg" alt="#" />
-                      </td>
-                      <td>
-                        <img
-                          onClick={() => deleteTransaction(el)}
-                          src="/icons/delete.svg"
-                          alt="#"
-                        />
-                      </td>
-                    </tr>
-                  );
-                })}
+                {transactions
+                  .sort((a, b) => new Date(a.date) - new Date(b.date))
+                  .map((el, i) => {
+                    return (
+                      <tr key={i}>
+                        <td style={el.type === 'income' ? { color: 'green' } : { color: 'red' }}>
+                          {el.amount} ₴
+                        </td>
+                        <td>{el.name}</td>
+                        <td>{el.date}</td>
+                        <td>
+                          <img onClick={() => editRow(el)} src="/icons/edit.svg" alt="#" />
+                        </td>
+                        <td>
+                          <img
+                            onClick={() => deleteTransaction(el)}
+                            src="/icons/delete.svg"
+                            alt="#"
+                          />
+                        </td>
+                      </tr>
+                    );
+                  })}
               </tbody>
             </table>
           </div>
