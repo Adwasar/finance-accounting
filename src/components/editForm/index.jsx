@@ -112,7 +112,7 @@ function EditFrom(props) {
           </div>
         )}
       </div>
-      <input className={styles['submit-btn']} type="submit" />
+      <input className={styles['submit-btn']} type="submit" value="Save" />
     </form>
   );
 }

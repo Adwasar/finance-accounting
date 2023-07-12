@@ -13,6 +13,7 @@ function Form(props) {
     register,
     handleSubmit,
     formState: { errors },
+    reset,
   } = useForm();
 
   const onSubmit = (data) => {
@@ -23,6 +24,7 @@ function Form(props) {
       date: data.date,
     };
     setTransactions([...transactions, transaction]);
+    reset();
   };
 
   return (
@@ -104,7 +106,7 @@ function Form(props) {
             </div>
           )}
         </div>
-        <input className={styles['submit-btn']} type="submit" />
+        <input className={styles['submit-btn']} type="submit" value="Save" />
       </form>
     </>
   );
